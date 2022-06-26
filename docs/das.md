@@ -24,6 +24,7 @@ O software do robô de irrigação construído para a matéria de Projeto Integr
 
 * API - Application Programming Interface
 * JSON - JavaScript Object Notation
+* PaaS - Platform as a Service
 * REST - Representational State Transfer
 
 # Representação Arquitetural
@@ -33,6 +34,12 @@ O software do robô de irrigação construído para a matéria de Projeto Integr
 # Objetivos Arquiteturais e Restrições
 
 # Ferramentas Utilizadas
+
+|Nome|Descrição|
+|--|--|
+|React|Biblioteca JavaScript para criação de interface de usuário|
+|Flask|Framework Python para criação de APIs|
+|Heroku|Plataforma como serviço (PaaS) para deploy do backend|
 
 # Visão Lógica
 
