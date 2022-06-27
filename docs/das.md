@@ -25,11 +25,17 @@ O software do robô de irrigação construído para a matéria de Projeto Integr
 * API - Application Programming Interface
 * JSON - JavaScript Object Notation
 * PaaS - Platform as a Service
+* PWA - Progressive Web Application
 * REST - Representational State Transfer
 
 # Representação Arquitetural
 ## Frontend
+
+O frontend da aplicação consiste em um PWA, ou seja, um híbrido entre website e app mobile. Através dele, o usuário pode demarcar a área de interesse a ser irrigada, iniciar ou interromper rotinas de irrigação previamente configuradas e acessar dados dos sensores, como temperatura e umidade. Será implementado em JavaScript com a biblioteca React para facilitar a criação de componentes que podem ser reusados.
+
 ## Backend
+
+O backend da aplicação serve como uma ponte entre o frontend e o robô, fornecendo uma API para permitir a comunicação entre as partes e a troca de dados. Além disso, existe um módulo que calcula a trajetória a ser seguida pelo robô na área delimitada.
 
 # Objetivos Arquiteturais e Restrições
 
@@ -37,9 +43,14 @@ O software do robô de irrigação construído para a matéria de Projeto Integr
 
 |Nome|Descrição|
 |--|--|
-|React|Biblioteca JavaScript para criação de interface de usuário|
+|Discod|Ferramenta de comunicação|
 |Flask|Framework Python para criação de APIs|
+|Git|Controle de versionamento de código-fonte|
+|Github|Plataforma de hospedagem de código-fonte|
 |Heroku|Plataforma como serviço (PaaS) para deploy do backend|
+|React|Biblioteca JavaScript para criação de interface de usuário|
+|Telegram|Ferramenta de comunicação|
+|Visual Studio Code|Editor de código-fonte|
 
 # Visão Lógica
 
