@@ -17,7 +17,6 @@ O software do robô de irrigação construído para a matéria de Projeto Integr
 * Fornecer uma interface de comunicação entre o robô e a interface gráfica, utilizando uma API REST para envio e recebimento de dados no formato JSON
 
 * Fornecer um backend onde será realizado o processamento da trajetória do robô a partir de uma área estabelecida pelo usuário
-
 </p>
 
 ## Definições, Siglas e Acrônimos
@@ -31,13 +30,28 @@ O software do robô de irrigação construído para a matéria de Projeto Integr
 # Representação Arquitetural
 ## Frontend
 
+<p align="justify">
 O frontend da aplicação consiste em um PWA, ou seja, um híbrido entre website e app mobile. Através dele, o usuário pode demarcar a área de interesse a ser irrigada, iniciar ou interromper rotinas de irrigação previamente configuradas e acessar dados dos sensores, como temperatura e umidade. Será implementado em JavaScript com a biblioteca React para facilitar a criação de componentes que podem ser reusados.
+</p>
 
 ## Backend
 
+<p align="justify">
 O backend da aplicação serve como uma ponte entre o frontend e o robô, fornecendo uma API para permitir a comunicação entre as partes e a troca de dados. Além disso, existe um módulo que calcula a trajetória a ser seguida pelo robô na área delimitada.
+</p>
 
 # Objetivos Arquiteturais e Restrições
+
+São objetivos desta arquitetura:
+* Reusabilidade de componentes do frontend
+* Simplicidade de endpoints na API
+* Permitir flexibilização da troca de informações entre frontend, backend e robô
+* Simplicidade de uso para o usuário final
+
+São restrições desta arquitetura:
+
+* A interface de usuário deve estar disponível em navegador web ou mobile
+* A rota a ser seguida pelo robô deve ser calculada automaticamente no backend
 
 # Ferramentas Utilizadas
 
