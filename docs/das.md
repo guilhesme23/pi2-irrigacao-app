@@ -68,5 +68,10 @@ São restrições desta arquitetura:
 
 # Visão Lógica
 
-# Visão de Implementação
+O frontend da aplicação possui módulos focados em desenvolver as páginas, os componentes compartilhados e trechos de código que podem ser reaproveitados em qualquer ponto. O módulo services é responsável por estabelecer a conexão com o backend da aplicação.
 
+O backend possui a implementação da API, onde são feitas as conexões via REST entre a aplicação e o robô. Além disso, o módulo mappings é responsável por calcular a trajetória que o robô deverá seguir.
+
+## Diagrama de pacotes
+
+![diagrama](./img/diagrama_de_pacotes.png)
