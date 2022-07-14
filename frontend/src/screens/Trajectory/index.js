@@ -1,11 +1,10 @@
 import './index.css'
+import Sidebar from '../../components/Sidebar'
 
 function Trajectory() {
     return (
         <div id="trajectory">
-            <p>
-                Hello world
-            </p>
+            <Sidebar />
         </div>
     )
 }
