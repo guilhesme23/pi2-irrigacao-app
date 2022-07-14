@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+ 
+ irrigacao-api:
+  build:
+   dockerfile: docker/Dockerfile
+   context: .
+  env_file: .env
+  volumes:
+   - ./src/:/backend/src/
+  ports:
+   - ${APP_PORT}:${APP_PORT}
+  depends_on:
+   - db
+ 
+ db:
+  image: postgres:13.2-alpine
+  env_file: .env
+  volumes:
+   - ./database/:/docker-entrypoint-initdb.d
+  ports:
+   - ${DB_PORT}:${DB_PORT}
+  
+networks:
+ default:
+  external:
+   name: base-network
