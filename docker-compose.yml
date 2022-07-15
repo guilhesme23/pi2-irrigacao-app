@@ -11,5 +11,12 @@ services:
     volumes:
       - pi2pgdata:/data/postgres
 
+  frontend:
+    build: 
+      dockerfile: ./Dockerfile
+      context: ./frontend
+    ports:
+      - 3000:80
+
 volumes:
   pi2pgdata:
