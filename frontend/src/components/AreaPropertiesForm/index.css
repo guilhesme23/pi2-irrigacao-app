@@ -1,0 +1,26 @@
+#area-properties{
+    width: 25%;
+}
+
+#area-properties-box{
+    background-color: #251051;
+    position: relative;
+    top: 25vh;
+    height: 50vh;
+}
+
+#area-propertie-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#area-text-box{
+    width: 10vw;
+    text-align: center;
+}
+
+#base-position-selection{
+    width: 10vw;
+    text-align: center;
+}

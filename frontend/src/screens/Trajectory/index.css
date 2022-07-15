@@ -1,1 +1,6 @@
-p {}
+#trajectory{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    height: auto !important;
+}
