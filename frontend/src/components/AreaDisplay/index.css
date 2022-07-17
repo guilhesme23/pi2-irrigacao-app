@@ -1,0 +1,36 @@
+#area-display{
+    background-color: #afafaf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#grid-block{
+    background-color: red;
+    height: 80vh;
+    width: 50vw;
+}
+
+#top-numbers{
+    display: flex;
+    position: relative;
+    top: 0vh;
+    margin: 0 1vw 0 1vw;
+    justify-content: space-between;
+}
+
+#bottom-numbers{
+    display: flex;
+    position: relative;
+    top: 62vh;
+    margin: 0 1vw 0 1vw;
+    justify-content: space-between;
+}
+
+#sprinkler-range-text{
+    position: relative;
+    top: 53vh;
+    display: flex;
+    justify-content: center;
+}
