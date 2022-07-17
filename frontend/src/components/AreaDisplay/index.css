@@ -7,7 +7,7 @@
 }
 
 #grid-block{
-    background-color: red;
+    background-color: white;
     height: 80vh;
     width: 50vw;
 }
@@ -52,4 +52,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#base-position-1{
+    color: red;
+}
+
+#base-position-2{
+    color: black;
+}
+
+#base-position-3{
+    color: black;
+}
+
+#base-position-4{
+    color: black;
 }

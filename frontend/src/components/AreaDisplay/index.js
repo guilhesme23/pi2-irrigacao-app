@@ -5,8 +5,8 @@ function AreaDisplay() {
         <div id="area-display">
             <div id="grid-block">
                 <div id="top-numbers">
-                    <p>4</p>
-                    <p>3</p>
+                    <p id="base-position-4">4</p>
+                    <p id="base-position-3">3</p>
                 </div>
                 <div id="grid">
                     <div id="grid-item">.</div>
@@ -111,8 +111,8 @@ function AreaDisplay() {
                     <div id="grid-item">.</div>
                 </div>
                 <div id="bottom-numbers">
-                    <p>1</p>
-                    <p>2</p>
+                    <p id="base-position-1">1</p>
+                    <p id="base-position-2">2</p>
                 </div>
                 <p id="sprinkler-range-text">
                     Área de alcance do aspersor = 1m
