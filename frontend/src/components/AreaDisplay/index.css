@@ -22,15 +22,34 @@
 
 #bottom-numbers{
     display: flex;
-    position: relative;
-    top: 62vh;
+    width: 48vw;
+    justify-content: center;
+    position: absolute;
+    top: 80vh;
     margin: 0 1vw 0 1vw;
     justify-content: space-between;
 }
 
 #sprinkler-range-text{
-    position: relative;
-    top: 53vh;
+    position: absolute;
+    top: 80vh;
+    right: 25vw;
+    display: flex;
+}
+
+#grid{
+    height: 60vh;
+    margin: 1px auto;
+    width: 45vw;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    background-color: yellow;
+}
+
+#grid-item{
+    background-color: lightblue;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
