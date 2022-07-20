@@ -1,9 +1,10 @@
 import './index.css'
+import BatteryBox from '../../assets/BatteryBox';
 
 function DataBox() {
     return(
         <div id='data-box'>
-            <div id="battery-box"></div>
+            <BatteryBox />
             <div id="time-activity-box"></div>
             <div id="sensor-status-box"></div>
         </div>

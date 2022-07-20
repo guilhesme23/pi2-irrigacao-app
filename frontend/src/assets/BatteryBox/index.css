@@ -1,0 +1,33 @@
+#battery-box{
+    background-color: blue;
+    width: 30vw;
+    height: 15vh;
+    display: flex;
+}
+
+#battery-icon-box{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+#battery-status-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#battery-status-value{
+    position: relative;
+    font-size: 3vw;
+    margin: 0;
+    top: -20px;
+}
+
+#fa-battery-icon{
+    color: white;
+    width: 50vw;
+    font-size: 5vw;
+}
