@@ -1,7 +1,9 @@
 import networkx as nx
+import math
 
 def gen_grid(height, lenght):
-    return nx.grid_2d_graph(height, lenght)
+    square_side_meters = 3
+    return nx.grid_2d_graph(math.ceil(height/square_side_meters), math.ceil(lenght/square_side_meters))
 
 def hamiltonian_path_brute_force(graph_grid):
     F = [(graph_grid,[list(graph_grid.nodes())[0]])]
