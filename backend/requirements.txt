@@ -3,3 +3,4 @@ pydantic
 fastapi
 sqlalchemy
 psycopg2
+networkx
