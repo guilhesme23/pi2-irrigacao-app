@@ -7,16 +7,12 @@ WORKDIR /backend
 RUN apt-get update && \
 	apt-get -qq -y install netcat-openbsd
 
-COPY docker/requirements.txt .
+COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-COPY ./src/ .
-
-COPY ./start.sh .
-
-RUN chmod +x start.sh
+COPY . .
 
 EXPOSE 5000
 
-CMD ./start.sh
+CMD ["uvicorn", "api.src.main:app", "--host", "0.0.0.0", "--port", "5000"]

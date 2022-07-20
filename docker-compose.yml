@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 services:
   db:
     image: postgres:14
@@ -12,11 +12,23 @@ services:
       - pi2pgdata:/data/postgres
 
   frontend:
-    build: 
+    build:
       dockerfile: ./Dockerfile
       context: ./frontend
     ports:
       - 3000:80
+
+  backend:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./backend
+    volumes:
+      - ./backend/api:/backend/src/api
+      - ./backend/mapping:/backend/src/mapping
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
 
 volumes:
   pi2pgdata:

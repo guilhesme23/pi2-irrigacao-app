@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import sensors, trajectory
+from api.src.routers import sensors, trajectory
 
 app = FastAPI()
 
