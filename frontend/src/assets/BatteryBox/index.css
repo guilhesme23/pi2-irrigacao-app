@@ -1,12 +1,11 @@
 #battery-box{
-    background-color: blue;
+    background-color: #290081;
     width: 30vw;
     height: 15vh;
     display: flex;
 }
 
 #battery-icon-box{
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
