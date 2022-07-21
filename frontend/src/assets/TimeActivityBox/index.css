@@ -1,12 +1,11 @@
 #time-activity-box{
-    background-color: blue;
+    background-color: #290081;
     width: 30vw;
     height: 30vh;
     display: flex;
 }
 
 #timer-icon-box{
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
