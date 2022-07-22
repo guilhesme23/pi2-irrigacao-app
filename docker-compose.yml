@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:14
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: pi2user
+      POSTGRES_PASSWORD: pi2pass
+      PGDATA: /data/postgres
+    volumes:
+      - pi2pgdata:/data/postgres
+
+  frontend:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./frontend
+    ports:
+      - 3000:80
+
+  backend:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./backend
+    volumes:
+      - ./backend/api:/backend/src/api
+      - ./backend/mapping:/backend/src/mapping
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+
+volumes:
+  pi2pgdata:
