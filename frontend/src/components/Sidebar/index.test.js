@@ -10,6 +10,6 @@ test('if sidebar buttons are rendered', () => {
     );
 
     expect(screen.getByText("Trajetória")).toBeInTheDocument();
+    expect(screen.getByText("Controles")).toBeInTheDocument();
     expect(screen.getByText("Relatórios")).toBeInTheDocument();
-    expect(screen.getByText("Sensores")).toBeInTheDocument();
 })
