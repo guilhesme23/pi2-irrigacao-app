@@ -13,7 +13,7 @@ function Sidebar() {
                 </Link>
                 <Link id="sidebar-button" to='/data'>
                     <FontAwesomeIcon id='fa-icon' icon={faChartPie}/>
-                    <p>Sensores</p>
+                    <p>Controles</p>
                 </Link>
                 <button id="sidebar-button">
                     <FontAwesomeIcon id='fa-icon' icon={faFileLines}/>
