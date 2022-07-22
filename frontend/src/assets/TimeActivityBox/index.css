@@ -1,0 +1,28 @@
+#time-activity-box{
+    background-color: #290081;
+    width: 30vw;
+    height: 30vh;
+    display: flex;
+}
+
+#timer-icon-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+#fa-stopwatch-icon{
+    color: white;
+    font-size: 5vw;
+}
+
+#timer-status-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#timer-status-value{
+    font-size: 3vw;
+}
