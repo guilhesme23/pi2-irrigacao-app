@@ -15,10 +15,10 @@ function Sidebar() {
                     <FontAwesomeIcon id='fa-icon' icon={faChartPie}/>
                     <p>Controles</p>
                 </Link>
-                <button id="sidebar-button">
+                <Link id="sidebar-button" to='/reports'>
                     <FontAwesomeIcon id='fa-icon' icon={faFileLines}/>
                     <p>Relatórios</p>
-                </button>
+                </Link>
             </div>
         </div>
     )
