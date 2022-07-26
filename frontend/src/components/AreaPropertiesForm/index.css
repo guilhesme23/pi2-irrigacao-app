@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 #area-properties{
-    width: 25%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@
 #base-position-selection{
     border: none;
     background-color: #DBF4F9;
-    width: 8.5vw;
+    width: 8.4vw;
     height: 5.5vh;
     text-align: left;
 }

@@ -3,13 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 55%;
+    width: 100%;
 }
 
 #grid-block{
     background-color: white;
     border-radius: 1vw;
-    height: 80vh;
+    height: 70vh;
     width: 100%;
 }
 
@@ -32,7 +32,7 @@
 }
 
 #grid{
-    height: 60vh;
+    /* height: 60vh; */
     margin: 1px auto;
     width: 80%;
     display: grid;

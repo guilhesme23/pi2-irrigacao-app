@@ -5,3 +5,16 @@
     height: auto !important;
     background-color: #DBF4F9;
 }
+
+#trajectory-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 3vw;
+    width: 100%;
+}
+
+#area-info-box{
+    display: flex;
+    width: 78vw;
+}

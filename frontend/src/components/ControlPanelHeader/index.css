@@ -1,9 +1,7 @@
 #control-panel-header{
     background-color: white;
-    width: 80%;
+    width: 90%;
     height: 10vh;
-    position: relative;
-    top: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;

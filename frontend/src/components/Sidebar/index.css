@@ -60,13 +60,13 @@
     color: white;
 }
 
-p{
-    color: #3DCBEB;
+#sidebar-button p{
     font-weight: bold;
     font-family: 'Roboto';
-    font-size: 18px;
+    font-size: 1.4vw;
 }
 
 #fa-icon{
     color: #3DCBEB;
+    font-size: 1vw;
 }
