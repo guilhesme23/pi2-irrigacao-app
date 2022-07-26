@@ -2,39 +2,70 @@
 
 #sidebar{
     width: 15%;
-    height: 50%;
-    background-color: #290081;
+    display: flex;
+    flex-direction: column; 
 }
 
 #buttons-box{
-    width: 100%;
-    height: 100vh;
+    padding: 0 1vw;
+    height: 60vh;
     top: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-box{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#logo-text{
+    margin: 0;
+    text-align: center;
+    color: #3DCBEB;
+    font-family: 'Roboto';
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+#logo-image{
+    width: 100%;
 }
 
 #sidebar-button{
-    position: relative;
     top: 30vh;
     width: 100%;
-    background-color: #290081;
     transition-duration: 0.2s;
     border: none;
+    text-decoration: none;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    border-radius: 8px;
+    height: 40px;
 }
 
 #sidebar-button:hover{
-    background-color: #251051;
+    background-color: #3DCBEB;
+}
+
+#sidebar-button:hover p{
+    color: white;
+}
+
+#sidebar-button:hover #fa-icon{
+    color: white;
 }
 
 p{
-    color: white;
+    color: #3DCBEB;
     font-weight: bold;
     font-family: 'Roboto';
     font-size: 18px;
 }
 
 #fa-icon{
-    color: white;
+    color: #3DCBEB;
 }
