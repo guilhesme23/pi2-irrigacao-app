@@ -8,7 +8,7 @@ function Trajectory() {
         <div id="trajectory">
             <Sidebar />
             <AreaPropertiesForm />
-            {/* <AreaDisplay /> */}
+            <AreaDisplay />
         </div>
     )
 }

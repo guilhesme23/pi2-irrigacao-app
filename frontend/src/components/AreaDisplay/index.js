@@ -114,10 +114,10 @@ function AreaDisplay() {
                     <p id="base-position-1">1</p>
                     <p id="base-position-2">2</p>
                 </div>
-                <p id="sprinkler-range-text">
-                    Área de alcance do aspersor = 1m
-                </p>
             </div>
+            <p id="sprinkler-range-text">
+                Área de alcance do aspersor = 1m
+            </p>
         </div>
     )
 }
