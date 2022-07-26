@@ -14,3 +14,11 @@ CREATE TABLE "public"."sensores" (
 
 	CONSTRAINT "PK_sensores" PRIMARY KEY ( "id" )
 );
+
+CREATE TABLE "public"."trajectory" (
+	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY(start 1),
+	height FLOAT NOT NULL,
+	lenght FLOAT NOT NULL, 
+
+	CONSTRAINT "PK_trajectory" PRIMARY KEY ( "id" )
+);
