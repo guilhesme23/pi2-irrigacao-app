@@ -1,26 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 #area-properties{
     width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #area-properties-box{
     background-color: #251051;
-    position: relative;
-    top: 25vh;
-    height: 50vh;
+    width: 80%;
+    padding-bottom: 10vh;
+    border-radius: 2vw;
 }
 
-#area-propertie-box{
+#area-property-box{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#area-property-box p{
+    font-size: 1vw;
+}
+
+#area-properites-box-title p{
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 2vw;
 }
 
 #area-text-box{
-    width: 10vw;
-    text-align: center;
+    width: 8vw;
+    height: 5vh;
+    text-align: left;
 }
 
 #base-position-selection{
-    width: 10vw;
-    text-align: center;
+    width: 8.5vw;
+    height: 5.5vh;
+    text-align: left;
 }

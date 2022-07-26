@@ -4,15 +4,18 @@ function AreaPropertiesForm() {
     return (
         <div id='area-properties'>
             <div id='area-properties-box'>
-                <div id='area-propertie-box'>
+                <div id="area-properites-box-title">
+                    <p>Grid Layout</p>
+                </div>
+                <div id='area-property-box'>
                     <p>Largura (m)</p>
                     <input id="area-text-box"></input>
                 </div>
-                <div id='area-propertie-box'>
+                <div id='area-property-box'>
                     <p>Comprimento (m)</p>
                     <input id="area-text-box"></input>
                 </div>
-                <div id='area-propertie-box'>
+                <div id='area-property-box'>
                     <p>Posição da base</p>
                     <select id="base-position-selection">
                         <option value="1">1</option>
