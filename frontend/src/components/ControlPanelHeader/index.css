@@ -1,0 +1,36 @@
+#control-panel-header{
+    background-color: white;
+    width: 80%;
+    height: 10vh;
+    position: relative;
+    top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1vw;
+    border-radius: 1vw;
+}
+
+#control-panel-items-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50%;
+    width: 30vw;
+}
+
+#control-panel-title-box p,
+#control-panel-temperature-info p, 
+#control-panel-moisture-info p{
+    font-size: 1.4vw;
+}
+
+#fa-bell{
+    color: #3DCBEB;
+    font-size: 1vw;
+}
+
+#fa-battery-half{
+    color: #3DCBEB;
+    font-size: 1vw;
+}
