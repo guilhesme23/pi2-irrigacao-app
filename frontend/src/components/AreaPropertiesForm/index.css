@@ -8,7 +8,7 @@
 }
 
 #area-properties-box{
-    background-color: #251051;
+    background-color: white;
     width: 80%;
     padding-bottom: 10vh;
     border-radius: 2vw;
@@ -31,12 +31,16 @@
 }
 
 #area-text-box{
+    border: none;
+    background-color: #DBF4F9;
     width: 8vw;
     height: 5vh;
     text-align: left;
 }
 
 #base-position-selection{
+    border: none;
+    background-color: #DBF4F9;
     width: 8.5vw;
     height: 5.5vh;
     text-align: left;
