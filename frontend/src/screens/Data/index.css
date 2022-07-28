@@ -3,4 +3,19 @@
     flex-direction: row;
     min-height: 100vh;
     height: auto !important;
+    background-color: #DBF4F9;
+}
+
+#data-screen{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3vw;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#data-info-box{
+    display: flex;
+    width: 92%;
+    height: 70%;
 }
