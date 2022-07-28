@@ -1,9 +1,22 @@
 #graph-box{
-    background-color: #d9d9d9;
+    background-color: white;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    padding: 10px;
+    border-radius: 1vw;
+}
+
+#graph-box-title p{
+    margin: 0 0 1vh 0;
+    font-size: 1.4vw;
+}
+
+#graph-box-items{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
     align-items: center;
 }

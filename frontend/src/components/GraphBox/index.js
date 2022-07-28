@@ -4,9 +4,15 @@ import './index.css'
 function GraphBox() {
     return(
         <div id='graph-box'>
-            <SingleGraphBox headerText='Umidade do solo'/>
-            <SingleGraphBox headerText='Umidade do ar'/>
-            <SingleGraphBox headerText='Temperatura do ar'/>
+            <div id='graph-box-title'>
+                <p>Relatório dos sensores</p>
+            </div>
+            <div id='graph-box-items'>
+                <SingleGraphBox headerText='Umidade do solo'/>
+                <SingleGraphBox headerText='Umidade do ar'/>
+                <SingleGraphBox headerText='Temperatura do ar'/>
+                <SingleGraphBox headerText='Temperatura do solo'/>
+            </div>
         </div>
     )
 }
