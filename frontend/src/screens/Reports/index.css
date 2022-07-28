@@ -1,0 +1,31 @@
+#reports{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    height: auto !important;
+    background-color: #DBF4F9;
+}
+
+#reports-screen{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3vw;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#reports-info-box{
+    background-color: white;
+    border-radius: 1vw;
+    padding: 10px;
+    width: 90.5%;
+    height: 70%;
+}
+
+#reports-info-box-graph-items{
+    height: 55%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}

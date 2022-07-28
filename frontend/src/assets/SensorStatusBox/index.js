@@ -8,27 +8,27 @@ function SensorStatusBox(){
                     <p id="column-header-text">Data/Hora</p>
                 </div>
                 <div id="column-item">
-                    <p id="column-item-text">1</p>
+                    <p id="column-item-text">13/07/2022 17:43:42</p>
                 </div>
                 <div id="column-item">
-                    <p id="column-item-text">2</p>
+                    <p id="column-item-text">13/07/2022 17:36:04</p>
                 </div>
                 <div id="column-item">
-                    <p id="column-item-text">3</p>
+                    <p id="column-item-text">13/07/2022 17:28:09</p>
                 </div>
             </div>
             <div id="sensor-type-column">
                 <div id="column-header">
-                    <p id="column-header-text">Tipo</p>
+                    <p id="column-header-text">Atividade</p>
                 </div>
                 <div id="column-item">
-                    <p id="column-item-text">Umidade Solo</p>
+                    <p id="column-item-text">O robô finalizou o ciclo</p>
                 </div>
                 <div id="column-item">
-                    <p id="column-item-text">Umidade Ar</p>
+                    <p id="column-item-text">O robô voltou para abastecer o tanque de água</p>
                 </div>
                 <div id="column-item">
-                    <p id="column-item-text">Temperatura Ar</p>
+                    <p id="column-item-text">O robô iniciou um novo ciclo</p>
                 </div>
             </div>
         </div>
