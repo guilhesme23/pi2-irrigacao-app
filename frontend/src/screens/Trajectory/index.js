@@ -3,15 +3,11 @@ import Sidebar from '../../components/Sidebar'
 import AreaPropertiesForm from '../../components/AreaPropertiesForm'
 import AreaDisplay from '../../components/AreaDisplay'
 import ControlPanelHeader from '../../components/ControlPanelHeader'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 function Trajectory() {
     const [basePosition, setBasePosition] = useState(1)
     const [updateBasePosition, setUpdateBasePosition] = useState(false)
-
-    useEffect(() => {
-        console.log('basePosition = ' + basePosition)
-    })
 
     return (
         <div id="trajectory">
