@@ -1,6 +1,7 @@
 import './index.css'
 
-function AreaPropertiesForm() {
+function AreaPropertiesForm(props) {
+
     return (
         <div id='area-properties'>
             <div id='area-properties-box'>
@@ -17,7 +18,11 @@ function AreaPropertiesForm() {
                 </div>
                 <div id='area-property-box'>
                     <p>Posição da base</p>
-                    <select id="base-position-selection">
+                    <select id="base-position-selection" 
+                        onChange={(event) => {
+                            props.setBasePosition(event.target.value)
+                            props.setUpdateBasePosition(true)
+                    }}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
