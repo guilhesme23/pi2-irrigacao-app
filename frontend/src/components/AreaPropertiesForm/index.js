@@ -1,4 +1,6 @@
 import './index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCompass } from '@fortawesome/free-solid-svg-icons'
 
 function AreaPropertiesForm(props) {
 
@@ -28,6 +30,12 @@ function AreaPropertiesForm(props) {
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
+                </div>
+                <div id="area-property-button">
+                    <button>
+                        <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
+                        Calcular rota
+                    </button>
                 </div>
             </div>
         </div>
