@@ -1,18 +1,10 @@
 # Prototipagem
 ## 1. Introdução
-Para Sommerville e Sawyer (SOMMERVILLE; SAWYER, 1997), um protótipo  
-pode ser usado como meio de comunicação entre diversos membros da equipe de desen-  
-volvimento ou mesmo como meio de testar ideias. Sendo assim, optamos por usar a pro-  
-totipação de baixa fidelidade para facilitar o processo de elicitação de requisitos visando  
-obter uma visão real do que deve ser o sistema Carby.  
+Para Sommerville e Sawyer (SOMMERVILLE; SAWYER, 1997), um protótipo pode ser usado como meio de comunicação entre diversos membros da equipe de desenvolvimento ou mesmo como meio de testar ideias. Sendo assim, optamos por usar a prototipação de baixa fidelidade para facilitar o processo de elicitação de requisitos visando obter uma visão real do que deve ser o sistema.
 
-O protótipo de baixa fidelidade foi útil para demonstrar quais atividades o sistema  
-atende e quais as possibilidades de navegação, bem como proporcionar uma visão geral de  
-como o sistema será.
+O protótipo de baixa fidelidade foi útil para demonstrar quais atividades o sistema atende e quais as possibilidades de navegação, bem como proporcionar uma visão geral de como o sistema será.
 
-O uso dessa ferramenta também proporcionou a identificação  
-de requisitos funcionais e a validação e alteração dos casos de uso tendo em vista os  
-objetivos gerais e específicos do produto.
+O uso dessa ferramenta também proporcionou a identificação de requisitos funcionais e a validação e alteração dos casos de uso tendo em vista os objetivos gerais e específicos do produto.
 
 ## 2. Telas
 Um aspecto comum de todas as telas é que elas estão divididas em três principais campos:
