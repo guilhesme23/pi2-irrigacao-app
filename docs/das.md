@@ -97,6 +97,11 @@ Os casos de uso definidos são:
 - Visualizar dados dos sensores: O veículo envia periodicamente dados coletados pelos sensores, como temperatura e umidade, e esses dados são exibidos ao usuário através de gráficos.
 - Visualizar registros de atividade do veículo: Atividades como sair para irrigar, retornar a base, reabastecer e outras são notificadas pelo veículo e o usuário acessa essas informações em uma tela de relatórios.
 
+## Diagrama de sequencia
+
+![diagrama_de_sequencia](./img/diagrama_de_sequencia.png)
+
+
 ## Backlog
 O backlog representa a acumulação de trabalho, tudo que deve ser desenvolvido do produto. Consiste em uma pilha de itens a se fazer, solicitados por alguém com base em suas necessidades/desejos e que devem ser entregues a quem solicitou após os artefatos estarem finalizados.
 
