@@ -96,3 +96,15 @@ Os casos de uso definidos são:
 - Seguir rota: Com a rota calculada pelo sistema, o veículo recebe essas informações e segue a rota calculada de maneira autônoma, utilizando seu sistema embarcado e diferentes sensores para realizar a tarefa.
 - Visualizar dados dos sensores: O veículo envia periodicamente dados coletados pelos sensores, como temperatura e umidade, e esses dados são exibidos ao usuário através de gráficos.
 - Visualizar registros de atividade do veículo: Atividades como sair para irrigar, retornar a base, reabastecer e outras são notificadas pelo veículo e o usuário acessa essas informações em uma tela de relatórios.
+
+## Backlog
+O backlog representa a acumulação de trabalho, tudo que deve ser desenvolvido do produto. Consiste em uma pilha de itens a se fazer, solicitados por alguém com base em suas necessidades/desejos e que devem ser entregues a quem solicitou após os artefatos estarem finalizados.
+
+Os épicos levantados para o projeto são:
+
+- Calculo de trajetória: O sistema deve permitir o cálculo da melhor trajetória possível com os dados de largura, comprimento do campo e a posição inicial do robô.
+- Tela de Controle: O sistema deve fornecer relatórios dos sensores e exibir um controle com gráficos plotados e dados relacionados a conexão do robô assim como o funcionamento dos seus sensores.
+- Tela de Relatórios: O sistema deve fornecer ao usuário uma série de relatórios em forma de gráficos sobre o cálculo hídrico da área em que o robô se encontra.
+
+## MoSCoW
+![moscow](./img/moscow.png)
