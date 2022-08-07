@@ -57,11 +57,9 @@ São restrições desta arquitetura:
 
 |Nome|Descrição|
 |--|--|
-|Discod|Ferramenta de comunicação|
-|Flask|Framework Python para criação de APIs|
+|FastAPI|Framework Python para criação de APIs|
 |Git|Controle de versionamento de código-fonte|
 |Github|Plataforma de hospedagem de código-fonte|
-|Heroku|Plataforma como serviço (PaaS) para deploy do backend|
 |React|Biblioteca JavaScript para criação de interface de usuário|
 |Telegram|Ferramenta de comunicação|
 |Visual Studio Code|Editor de código-fonte|
