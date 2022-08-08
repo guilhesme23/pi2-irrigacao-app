@@ -57,11 +57,9 @@ São restrições desta arquitetura:
 
 |Nome|Descrição|
 |--|--|
-|Discod|Ferramenta de comunicação|
-|Flask|Framework Python para criação de APIs|
+|FastAPI|Framework Python para criação de APIs|
 |Git|Controle de versionamento de código-fonte|
 |Github|Plataforma de hospedagem de código-fonte|
-|Heroku|Plataforma como serviço (PaaS) para deploy do backend|
 |React|Biblioteca JavaScript para criação de interface de usuário|
 |Telegram|Ferramenta de comunicação|
 |Visual Studio Code|Editor de código-fonte|
@@ -74,4 +72,42 @@ O backend possui a implementação da API, onde são feitas as conexões via RES
 
 ## Diagrama de pacotes
 
-![diagrama](./img/diagrama_de_pacotes.png)
+![diagrama_de_pacotes](./img/diagrama_de_pacotes.png)
+
+## Diagrama de caso de uso
+
+![diagrama_de_caso_de_uso](./img/diagrama_de_caso_de_uso.png)
+
+O diagrama de caso de uso apresenta as funcionalidades que os usuários podem realizar no sistema.
+
+Os atores definidos são:
+
+- Usuário: Representa o usuário final do sistema. Não interage diretamente com o veículo, apenas com o frontend.
+- Veículo autônomo: Representa o veículo que realiza a ação de irrigar a área determinada pelo usuário.
+
+Os casos de uso definidos são:
+
+- Inserir dimensões da área a ser irrigada: O usuário insere os valores de largura e comprimento da área a ser irrigada.
+- Escolher posição da base: A base de operações deve ser posicionada em uma das quatro arestas da área a ser irrigada (considerando que a área é um retângulo definido pelos valores de largura e comprimento fornecidos pelo usuário). A posição da base é determinada pelo usuário.
+- Calcular rota: O usuário confirma os valores fornecidos nas etapas anteriores e dá o comando para calcular rota.
+- Executar algorítmo para calcular melhor rota: O backend do sistema executa o algorítmo que calcula a melhor rota possível a ser traçada pelo veículo, e envia os pontos para o veículo e para o frontend.
+- Seguir rota: Com a rota calculada pelo sistema, o veículo recebe essas informações e segue a rota calculada de maneira autônoma, utilizando seu sistema embarcado e diferentes sensores para realizar a tarefa.
+- Visualizar dados dos sensores: O veículo envia periodicamente dados coletados pelos sensores, como temperatura e umidade, e esses dados são exibidos ao usuário através de gráficos.
+- Visualizar registros de atividade do veículo: Atividades como sair para irrigar, retornar a base, reabastecer e outras são notificadas pelo veículo e o usuário acessa essas informações em uma tela de relatórios.
+
+## Diagrama de sequencia
+
+![diagrama_de_sequencia](./img/diagrama_de_sequencia.png)
+
+
+## Backlog
+O backlog representa a acumulação de trabalho, tudo que deve ser desenvolvido do produto. Consiste em uma pilha de itens a se fazer, solicitados por alguém com base em suas necessidades/desejos e que devem ser entregues a quem solicitou após os artefatos estarem finalizados.
+
+Os épicos levantados para o projeto são:
+
+- Calculo de trajetória: O sistema deve permitir o cálculo da melhor trajetória possível com os dados de largura, comprimento do campo e a posição inicial do robô.
+- Tela de Controle: O sistema deve fornecer relatórios dos sensores e exibir um controle com gráficos plotados e dados relacionados a conexão do robô assim como o funcionamento dos seus sensores.
+- Tela de Relatórios: O sistema deve fornecer ao usuário uma série de relatórios em forma de gráficos sobre o cálculo hídrico da área em que o robô se encontra.
+
+## MoSCoW
+![moscow](./img/moscow.png)
