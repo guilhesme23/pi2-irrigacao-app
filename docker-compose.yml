@@ -15,6 +15,9 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: ./frontend
+    volumes:
+      - ./frontend/public:/frontend/public
+      - ./frontend/src:/frontend/src
     ports:
       - 3000:80
 

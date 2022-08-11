@@ -1,26 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 #area-properties{
-    width: 25%;
-}
-
-#area-properties-box{
-    background-color: #251051;
-    position: relative;
-    top: 25vh;
-    height: 50vh;
-}
-
-#area-propertie-box{
+    width: 50%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-#area-text-box{
-    width: 10vw;
+#area-properties-box{
+    background-color: white;
+    width: 80%;
+    padding-bottom: 5vh;
+    border-radius: 2vw;
+}
+
+#area-property-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#area-property-box p{
+    font-size: 1vw;
+}
+
+#area-property-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#area-property-button button{
+    height: 8vh;
+    width: 70%;
+    background-color: white;
+    color: #3DCBEB;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+#fa-icon-compass{
+    padding-right: 0.5vw;
+}
+
+#area-property-button button:hover{
+    background-color: #3DCBEB;
+    color: white;
+}
+
+#area-properites-box-title p{
     text-align: center;
+    font-family: 'Roboto';
+    font-size: 2vw;
+}
+
+#area-text-box{
+    border: none;
+    background-color: #DBF4F9;
+    width: 8vw;
+    height: 5vh;
+    text-align: left;
 }
 
 #base-position-selection{
-    width: 10vw;
-    text-align: center;
+    border: none;
+    background-color: #DBF4F9;
+    width: 8.4vw;
+    height: 5.5vh;
+    text-align: left;
 }

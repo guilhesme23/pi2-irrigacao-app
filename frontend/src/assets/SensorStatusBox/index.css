@@ -1,28 +1,30 @@
 #sensor-status-box{
     display: flex;
     justify-content: center;
-    width: 30vw;
-    height: 40vh;
+    margin: 0;
+    height: 45%;
+    overflow-y: scroll;
 }
 
 #datetime-column{
     background-color: white;
-    width: 50%;
+    width: 20%;
 }
 
 #sensor-type-column{
-    width: 50%;
+    width: 80%;
     background-color: white;
 }
 
 #column-header{
     padding: 1vw;
-    background-color: #290081;
+    background-color: #3DCBEB;
 }
 
 #column-header-text{
     margin: 0;
     color: white;
+    font-weight: bold;
 }
 
 #column-item{
@@ -33,4 +35,5 @@
 #column-item-text{
     margin: 0;
     color: black;
+    font-weight: bold;
 }
