@@ -11,7 +11,7 @@ CREATE SCHEMA IF NOT EXISTS "public";
 
 CREATE TABLE "public"."sensors" (
 	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY(start 1),
-	temp_ai FLOAT NOT NULL,
+	temp_air FLOAT NOT NULL,
 	temp_soil FLOAT NOT NULL,
 	humidity_air FLOAT NOT NULL,
 	humidity_soil FLOAT NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE "public"."sensors" (
 	CONSTRAINT "PK_sensors" PRIMARY KEY ( "id" )
 );
 
-CREATE TYPE "public"."report_enum" AS ENUM(
+CREATE TYPE "public"."reports_enum" AS ENUM(
 	'INIT_CYCLE',
 	'END_CYCLE',
 	'LOW_BATTERY'
@@ -30,7 +30,7 @@ CREATE TABLE "public"."reports" (
 	battery_level FLOAT NOT NULL,
 	remaining_points JSON NOT NULL,
 	recorded_on TIMESTAMP NOT NULL,
-	status_report report_enum NOT NULL,
+	status_report reports_enum NOT NULL,
 	CONSTRAINT "PK_reports" PRIMARY KEY ( "id" )
 );
 
@@ -44,7 +44,8 @@ CREATE TABLE "public"."field" (
 
 CREATE TABLE "public"."route" (
 	id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY(start 1),
-	base_pos POINT NOT NULL,
+	base_pos_x INT NOT NULL,
+	base_pos_y INT NOT NULL,
 	irrigation_route JSON NOT NULL,
 	field_id INT NOT NULL,
 
