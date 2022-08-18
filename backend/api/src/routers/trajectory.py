@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.mapping.core.networkx_grid_route import gen_grid, hamiltonian_path_brute_force
+from mapping.core.networkx_grid_route import gen_grid, hamiltonian_path_brute_force
 from pydantic import BaseModel
 
 class MapDimensions(BaseModel):
