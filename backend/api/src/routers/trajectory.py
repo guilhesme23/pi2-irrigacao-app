@@ -1,29 +1,58 @@
 from fastapi import APIRouter
+from fastapi.params import Depends
 from mapping.core.networkx_grid_route import gen_grid, hamiltonian_path_brute_force
 from pydantic import BaseModel
+
+from api.src.database import SessionLocal, engine
+import api.src.models as models
+from sqlalchemy.orm import Session
+
+router = APIRouter()
+
+def get_db():
+	db = SessionLocal()
+	try:
+		yield db
+	finally:
+		db.close()
 
 class MapDimensions(BaseModel):
 	height: float
 	lenght: float
 
-router = APIRouter()
+	class Config:
+		schema_extra = {
+			"example": {
+				"height": 12.2,
+				"lenght": 23.1,
+			}
+		}
+
+
+models.Base.metadata.create_all(bind=engine)
 
 database_simul = []
 
 @router.get("/trajectory/", tags = ["Trajectory"])
-def get_trajectory_data():
-	return {"message": "trajectory data", "status": "Success", "data": database_simul}
+def get_trajectory_data(db:Session = Depends(get_db)):
+	all_trajectories = db.query(models.trajectory).all()
+
+	return {"message": "trajectory data", "status": "Success", "data": all_trajectories}
 
 
 @router.get("/trajectory/{id}", tags = ["Trajectory"])
-def get_trajectory_data_with_id(id: int):
-	return {"message": "trajectory data", "status": "Success", "data": database_simul[id]}
+def get_trajectory_data_with_id(id: int, db:Session = Depends(get_db)):
+	trajectory_data = db.query(models.trajectory).filter(models.trajectory.id == id).first()
+	return {"message": "trajectory data", "status": "Success", "data": trajectory_data}
 
 
 @router.post("/trajectory/", tags = ["Trajectory"])
-def post_map_data(map_dimensions: MapDimensions):
+def post_map_data(map_dimensions: MapDimensions, db:Session = Depends(get_db)):
+	new_trajectory = models.trajectory(**map_dimensions.dict())
+	db.add(new_trajectory)
+	db.commit()
+	db.refresh(new_trajectory)
 	trajectory = hamiltonian_path_brute_force(gen_grid(map_dimensions.height, map_dimensions.lenght))
-	database_simul.append(trajectory)
 
-	return {"message": "Trajectory generated", "status": "Success", "data": trajectory}
+	return {"message": "Trajectory generated", "status": "Success", "data": new_trajectory}
 
