@@ -31,20 +31,20 @@ function SingleGraphBox(props){
                 position: 'top',
             },
             title: {
-                display: true,
+                display: false,
                 text: 'Exemplo'
             },
         },
     };
 
-    const labels = ['A', 'B', 'C']
+    const labels = ['09/07', '10/07', '11/07', '12/07', '13/07']
 
     const data = {
         labels,
         datasets: [
             {
-                label: 'Dataset 1',
-                data: [1, 2, 3],
+                label: props.label,
+                data: props.values,
                 borderColor: 'rgb(255, 0, 0)',
                 backgroundColor: 'rgb(123, 123, 123)',
             },
