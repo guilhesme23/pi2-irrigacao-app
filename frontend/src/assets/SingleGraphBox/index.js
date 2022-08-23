@@ -26,6 +26,7 @@ function SingleGraphBox(props){
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',
@@ -55,7 +56,7 @@ function SingleGraphBox(props){
         <div id='single-graph-box'>
             <p id='graph-header'>{props.headerText}</p>
             <div id='graph-position'>
-                <Line options={options} data={data}/>
+                <Line id='graph-chart-js' options={options} data={data}/>
             </div>
         </div>
     )
