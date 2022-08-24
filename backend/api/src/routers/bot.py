@@ -9,16 +9,19 @@ from api.src.models import irrigation_enum
 
 router = APIRouter()
 
-irrigate = False
-
 
 class SetIrrigateState(BaseModel):
     irrigate: bool
 
 
 @router.get("/bot", tags=["Bot"])
-def get_start():
+def get_start(db: Session = Depends(get_db)):
+    irrigate = False
+    repo = RepoIrrigation(db)
+    state = repo.get_current_irrigation_state()
     message = "Stop irrigation"
+    if state == irrigation_enum.START:
+        irrigate = True
     if irrigate:
         message = "Start irrigation"
     return {"message": message, "data": irrigate}

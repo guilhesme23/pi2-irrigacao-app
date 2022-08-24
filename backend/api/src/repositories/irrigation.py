@@ -14,3 +14,13 @@ class RepoIrrigation():
         except:
             self.db.rollback()
             return False
+    
+    def get_current_irrigation_state(self) -> irrigation_enum:
+        try:
+            state = self.db.query(Irrigation).order_by(Irrigation.created_at.desc()).first()
+            print(state)
+            if state:
+                return state.irrigate
+        except:
+            self.db.rollback()
+            return irrigation_enum.STOP
