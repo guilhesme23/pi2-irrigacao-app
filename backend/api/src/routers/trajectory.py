@@ -1,20 +1,13 @@
 from fastapi import APIRouter
 from fastapi.params import Depends
-from mapping.core.networkx_grid_route import gen_grid, hamiltonian_path_brute_force
+from mapping.core.networkx_grid_route import christofides_tsp_custom, gen_grid
 from pydantic import BaseModel
 
-from api.src.database import SessionLocal, engine
+from api.src.database import engine, get_db
 import api.src.models as models
 from sqlalchemy.orm import Session
 
 router = APIRouter()
-
-def get_db():
-	db = SessionLocal()
-	try:
-		yield db
-	finally:
-		db.close()
 
 class MapDimensions(BaseModel):
 	height: float
@@ -30,8 +23,6 @@ class MapDimensions(BaseModel):
 
 
 models.Base.metadata.create_all(bind=engine)
-
-database_simul = []
 
 @router.get("/trajectory/", tags = ["Trajectory"])
 def get_trajectory_data(db:Session = Depends(get_db)):
@@ -49,10 +40,10 @@ def get_trajectory_data_with_id(id: int, db:Session = Depends(get_db)):
 @router.post("/trajectory/", tags = ["Trajectory"])
 def post_map_data(map_dimensions: MapDimensions, db:Session = Depends(get_db)):
 	new_trajectory = models.trajectory(**map_dimensions.dict())
+	trajectory = christofides_tsp_custom(gen_grid(map_dimensions.height, map_dimensions.lenght))
 	db.add(new_trajectory)
 	db.commit()
 	db.refresh(new_trajectory)
-	trajectory = hamiltonian_path_brute_force(gen_grid(map_dimensions.height, map_dimensions.lenght))
+	print(trajectory)
 
 	return {"message": "Trajectory generated", "status": "Success", "data": new_trajectory}
-

@@ -6,8 +6,6 @@ irrigate = False
 
 @router.get("/bot", tags = ["Bot"])
 def get_start():
-    #irrigate = modelagem_agronomica()
-
     message = "Stop irrigation"
     if irrigate:
         message = "Start irrigation"

@@ -7,8 +7,9 @@ services:
     environment:
       POSTGRES_USER: pi2user
       POSTGRES_PASSWORD: pi2pass
-    volumes:
-      - ./pi2pgdata:/docker-entrypoint-initdb.d
+      POSTGRES_DB: irrigation_app
+    # volumes:
+    #   - ./pi2pgdata:/docker-entrypoint-initdb.d
 
   frontend:
     build:
