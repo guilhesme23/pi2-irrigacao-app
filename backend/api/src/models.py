@@ -40,7 +40,7 @@ class Field(Base):
 
     id = Column(Integer, primary_key = True, autoincrement = True, nullable = False)
     field_width = Column(Float(precision = 6, decimal_return_scale = None), nullable = False)
-    field_lenth = Column(Float(precision = 6, decimal_return_scale = None), nullable = False)
+    field_length = Column(Float(precision = 6, decimal_return_scale = None), nullable = False)
     routes = relationship("Route")
 
 class Route(Base):
