@@ -24,9 +24,10 @@ class SensorData(BaseModel):
 	class Config:
 		orm_mode = True
 
-@router.get("/sensors", tags = ["Sensors"])
-def get_sensors_data():
-	return {"message": "Sensors data"}
+@router.get("/sensors", tags = ["Sensors"], response_model=list[SensorData])
+def get_sensors_data(db: Session = Depends(get_db)):
+	repo = RepoSensors(db)
+	return repo.get_sensors_data()
 
 @router.post("/sensors", tags = ["Sensors"], response_model=SensorData)
 def add_sensor_data(data: SensorRecordPost, db: Session = Depends(get_db)):

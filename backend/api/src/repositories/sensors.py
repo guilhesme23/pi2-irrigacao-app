@@ -22,3 +22,10 @@ class RepoSensors():
             self.db.rollback()
             raise
         
+    def get_sensors_data(self) -> list[Sensor]:
+        try:
+            data = self.db.query(Sensor).order_by(Sensor.recorded_on.desc()).all()
+            return data
+        except:
+            self.db.rollback()
+            raise
