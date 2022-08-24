@@ -16,6 +16,12 @@ class Sensor(Base):
     humidity_soil = Column(Float(precision = 6, decimal_return_scale = None), nullable = False)
     recorded_on = Column(DateTime(timezone=True), server_default=func.now())
 
+    def __init__(self, temp: tuple[float], humidity: tuple[float]) -> None:
+        self.temp_air = temp[0]
+        self.temp_soil = temp[1]
+        self.humidity_air = humidity[0]
+        self.humidity_soil = humidity[1]
+
 class reports_enum(enum.Enum):
     INIT_CYCLE = 'INIT_CYCLE'
     END_CYCLE = 'END_CYCLE'
