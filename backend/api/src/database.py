@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 DATABASE_URL = os.getenv('DATABASE_URL',
-          "postgresql+psycopg2://pi2user:pi2pass@db:5432/irrigation_api")
+                         "postgresql://pi2user:pi2pass@db:5432/irrigation_app")
 
 engine = create_engine(DATABASE_URL)
 

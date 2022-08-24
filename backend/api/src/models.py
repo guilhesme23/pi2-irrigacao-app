@@ -44,7 +44,7 @@ class Route(Base):
     base_pos_x = Column(Integer, nullable = False)
     base_pos_y = Column(Integer, nullable = False)
     irrigation_route = Column(MutableDict.as_mutable(JSONB), nullable=False)
-    field_id = Column(Integer, ForeignKey("field.id"), nullable = False)
+    field_id = Column(Integer, ForeignKey("fields.id"), nullable = False)
 
 class irrigation_enum(enum.Enum):
     START = 'START'

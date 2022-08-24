@@ -3,7 +3,7 @@ from fastapi.params import Depends
 from mapping.core.networkx_grid_route import christofides_tsp_custom, gen_grid
 from pydantic import BaseModel
 
-from api.src.database import engine, get_db
+from api.src.database import get_db
 import api.src.models as models
 from sqlalchemy.orm import Session
 
@@ -21,8 +21,6 @@ class MapDimensions(BaseModel):
 			}
 		}
 
-
-models.Base.metadata.create_all(bind=engine)
 
 @router.get("/trajectory/", tags = ["Trajectory"])
 def get_trajectory_data(db:Session = Depends(get_db)):

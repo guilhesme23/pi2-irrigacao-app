@@ -1,5 +1,9 @@
 from fastapi import FastAPI
 from api.src.routers import sensors, trajectory, bot
+from api.src.models import Base
+from api.src.database import engine
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(debug=True)
 
