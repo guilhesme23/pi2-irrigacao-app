@@ -42,3 +42,12 @@ def add_report(data: AddReport, db: Session = Depends(get_db)):
         return report
     except:
         raise HTTPException(400, "Error creating report")
+
+@router.get(
+    '/reports',
+    tags=['Reports'],
+    description="Get a list of reports ordered from latest to earliest",
+    response_model=list[ReportResponse])
+def get_reports(db: Session = Depends(get_db)):
+    repo = RepoReports(db)
+    return repo.get_reports()

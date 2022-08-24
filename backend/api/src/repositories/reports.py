@@ -24,3 +24,7 @@ class RepoReports():
         except:
             self.db.rollback()
             raise
+
+    def get_reports(self) -> list[Report]:
+        reports = self.db.query(Report).order_by(Report.recorded_on.desc()).all()
+        return reports
