@@ -11,3 +11,17 @@ class FieldResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
+class CreateRoute(BaseModel):
+    field_id: int
+    base_pos_x: int = 0
+    base_pos_y: int = 0
+
+class RouteResponse(BaseModel):
+    base_pos_x: int = 0
+    base_pos_y: int = 0
+    field_id: int
+    irrigation_route: dict | list
+
+    class Config:
+        orm_mode = True
