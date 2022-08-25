@@ -27,4 +27,9 @@ class RepoRoute():
             self.db.rollback()
 
     def get_latest_trajectory(self):
-        ...
+        try:
+            result = self.db.query(Field, Route).order_by(Field.id.desc()).filter(Field.id == Route.field_id).first()
+            return result
+        except:
+            self.db.rollback()
+            return None

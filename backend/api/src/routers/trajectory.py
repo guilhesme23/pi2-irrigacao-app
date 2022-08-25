@@ -1,36 +1,24 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
 from mapping.core.networkx_grid_route import christofides_tsp_custom, gen_grid
-from networkx import to_dict_of_lists
-from pydantic import BaseModel
 
 from api.src.database import get_db
 import api.src.models as models
-from api.src.routers.common.schemas import CreateRoute, RouteResponse
+from api.src.routers.common.schemas import CreateRoute, RouteResponse, FullTrajectoryResponse
 from api.src.repositories import RepoFields, RepoRoute
 from sqlalchemy.orm import Session
 
 router = APIRouter()
 
 
-class MapDimensions(BaseModel):
-	height: float
-	lenght: float
-
-	class Config:
-		schema_extra = {
-			"example": {
-				"height": 12.2,
-				"lenght": 23.1,
-			}
-		}
-
-
-@router.get("/trajectory/", tags=["Trajectory"])
+@router.get("/trajectory/", tags=["Trajectory"], response_model=FullTrajectoryResponse)
 def get_trajectory_data(db: Session = Depends(get_db)):
-	all_trajectories = db.query(models.trajectory).all()
+	repo = RepoRoute(db)
+	trajectory = repo.get_latest_trajectory()
+	if not trajectory:
+		raise HTTPException(404, "Trajectory not found")
 
-	return {"message": "trajectory data", "status": "Success", "data": all_trajectories}
+	return FullTrajectoryResponse(field=trajectory[0], route=trajectory[1])
 
 
 @router.get("/trajectory/{id}", tags=["Trajectory"])
