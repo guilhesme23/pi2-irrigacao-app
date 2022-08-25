@@ -23,9 +23,12 @@ def get_trajectory_data(db: Session = Depends(get_db)):
 
 @router.get("/trajectory/{id}", tags=["Trajectory"])
 def get_trajectory_data_with_id(id: int, db: Session = Depends(get_db)):
-	trajectory_data = db.query(models.trajectory).filter(
-		models.trajectory.id == id).first()
-	return {"message": "trajectory data", "status": "Success", "data": trajectory_data}
+	repo = RepoRoute(db)
+	res = repo.get_trajectory_by_id(id)
+	if not res:
+		raise HTTPException(404, "Trajectory not found")
+
+	return FullTrajectoryResponse(field=res[0], route=res[1])
 
 
 @router.post("/trajectory/", tags=["Trajectory"], response_model=RouteResponse)

@@ -33,3 +33,11 @@ class RepoRoute():
         except:
             self.db.rollback()
             return None
+    
+    def get_trajectory_by_id(self, id: int):
+        try:
+            result = self.db.query(Field, Route).order_by(Field.id.desc()).filter(Route.id == id).filter(Route.field_id == Field.id).first()
+            return result
+        except:
+            self.db.rollback()
+            return None
