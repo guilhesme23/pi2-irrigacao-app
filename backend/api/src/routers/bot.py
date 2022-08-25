@@ -14,7 +14,7 @@ class SetIrrigateState(BaseModel):
     irrigate: bool
 
 
-@router.get("/bot", tags=["Bot"])
+@router.get("/commands/irrigate", tags=["Commands"])
 def get_start(db: Session = Depends(get_db)):
     irrigate = False
     repo = RepoIrrigation(db)
@@ -27,7 +27,7 @@ def get_start(db: Session = Depends(get_db)):
     return {"message": message, "data": irrigate}
 
 
-@router.post("/bot", tags=["Bot"])
+@router.post("/commands/irrigate", tags=["Commands"])
 def post_start(data: SetIrrigateState, db: Session = Depends(get_db)):
     irrigate = data.irrigate
     repo = RepoIrrigation(db)
