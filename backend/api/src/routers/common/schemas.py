@@ -5,6 +5,7 @@ class FieldPost(BaseModel):
     length: float
 
 class FieldResponse(BaseModel):
+    id: int
     field_width: float 
     field_length: float
 
