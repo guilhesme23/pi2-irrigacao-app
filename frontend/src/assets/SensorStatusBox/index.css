@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     margin: 0;
-    height: 45%;
+    margin-top: 10vh;
+    height: 35%;
     overflow-y: scroll;
 }
 
