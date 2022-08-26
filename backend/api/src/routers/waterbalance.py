@@ -6,10 +6,17 @@ router = APIRouter()
 
 
 @router.get("/waterbalance", tags=["WaterBalance"])
-def get_waterbalance_data(dataInicial: dt.datetime, dataFinal: dt.datetime, estacaoId="4792115781159100001", soloId=57):
-    data = {"dataInicial": dataInicial.strftime("%d/%m/%Y"),
-            "dataFinal": dataFinal.strftime("%d/%m/%Y"),
-            "estacaoId": estacaoId,
-            "soloId": soloId}
+def get_waterbalance_data():
+    end_date = dt.datetime.today()
+    start_date = end_date - dt.timedelta(days=30)
+
+    end_date = end_date.strftime("%d/%m/%Y")
+    start_date = start_date.strftime("%d/%m/%Y")
+    station_id = '4792115781159100001'
+    soil_id = 57
+    data = {"dataInicial": start_date,
+            "dataFinal": end_date,
+            "estacaoId": station_id,
+            "soloId": soil_id}
     data = post("http://sisdagro.inmet.gov.br/sisdagro/app/monitoramento/bhs.json", params=data)
     return data.json()['bhs']
