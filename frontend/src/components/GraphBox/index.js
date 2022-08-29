@@ -7,19 +7,22 @@ function GraphBox() {
     const [graphsData, setGraphsData] = useState({})
 
     useEffect(() => {
-        api.get("/sensors", {
-            headers: {"Access-Control-Allow-Origin": "*"}
-        }).then(response => {
-            const data = response.data;
-            setGraphsData(data)
-        })
+        async function fetchApi() {
+            await api.get("/sensors", {
+                headers: {"Access-Control-Allow-Origin": "*"}
+            }).then(response => {
+                const data = response.data;
+                setGraphsData(data)
+            })
+        }
+        fetchApi()
     }, [])
 
-    const umidade_solo = graphsData && graphsData.map(sensors => sensors.humidity_soil)
-    const umidade_ar = graphsData && graphsData.map(sensors => sensors.humidity_air)
-    const temperatura_ar = graphsData && graphsData.map(sensors => sensors.temp_air)
-    const temperatura_solo = graphsData && graphsData.map(sensors => sensors.temp_soil)
-    const data_coleta = graphsData && graphsData.map(sensors => new Date(sensors.recorded_on).toLocaleDateString())
+    const umidade_solo = Object.values(graphsData).map(sensors => sensors.humidity_soil)
+    const umidade_ar = Object.values(graphsData).map(sensors => sensors.humidity_air)
+    const temperatura_ar = Object.values(graphsData).map(sensors => sensors.temp_air)
+    const temperatura_solo = Object.values(graphsData).map(sensors => sensors.temp_soil)
+    const data_coleta = Object.values(graphsData).map(sensors => new Date(sensors.recorded_on).toLocaleDateString())
 
     return(
         <div id='graph-box'>
