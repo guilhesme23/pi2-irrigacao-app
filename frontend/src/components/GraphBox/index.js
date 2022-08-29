@@ -10,18 +10,16 @@ function GraphBox() {
         api.get("/sensors", {
             headers: {"Access-Control-Allow-Origin": "*"}
         }).then(response => {
-            console.log('resposta => ' + response)
             const data = response.data;
             setGraphsData(data)
         })
     }, [])
 
-    const umidade_solo = graphsData[0] && Object.values(graphsData[0])[3]
-    const umidade_ar = graphsData[0] && Object.values(graphsData[0])[2]
-    const temperatura_ar = graphsData[0] && Object.values(graphsData[0])[0]
-    const temperatura_solo = graphsData[0] && Object.values(graphsData[0])[1]
-    const data_coleta = new Date(graphsData[0] && Object.values(graphsData[0])[4])
-        .toLocaleDateString()
+    const umidade_solo = graphsData && graphsData.map(sensors => sensors.humidity_soil)
+    const umidade_ar = graphsData && graphsData.map(sensors => sensors.humidity_air)
+    const temperatura_ar = graphsData && graphsData.map(sensors => sensors.temp_air)
+    const temperatura_solo = graphsData && graphsData.map(sensors => sensors.temp_soil)
+    const data_coleta = graphsData && graphsData.map(sensors => new Date(sensors.recorded_on).toLocaleDateString())
 
     return(
         <div id='graph-box'>
@@ -32,42 +30,26 @@ function GraphBox() {
                 <SingleGraphBox 
                     headerText='Umidade do solo (%)'
                     label = 'Umidade'
-                    values = {[
-                        umidade_solo
-                    ]}
-                    x_values = {[
-                        data_coleta
-                    ]}
+                    values = {umidade_solo}
+                    x_values = {data_coleta}
                 />
                 <SingleGraphBox 
                     headerText='Umidade do ar (%)'
                     label = 'Umidade'
-                    values = {[
-                        umidade_ar
-                    ]}
-                    x_values = {[
-                        data_coleta
-                    ]}
+                    values = {umidade_ar}
+                    x_values = {data_coleta}
                 />
                 <SingleGraphBox 
                     headerText = 'Temperatura do ar (°C)'
                     label = 'Temperatura'
-                    values = {[
-                        temperatura_ar
-                    ]}
-                    x_values = {[
-                        data_coleta
-                    ]}
+                    values = {temperatura_ar}
+                    x_values = {data_coleta}
                 />
                 <SingleGraphBox 
                     headerText = 'Temperatura do solo (°C)'
                     label = 'Temperatura'
-                    values = {[
-                        temperatura_solo
-                    ]}
-                    x_values = {[
-                        data_coleta
-                    ]}
+                    values = {temperatura_solo}
+                    x_values = {data_coleta}
                 />
             </div>}
         </div>
