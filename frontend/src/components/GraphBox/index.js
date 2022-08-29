@@ -20,6 +20,8 @@ function GraphBox() {
     const umidade_ar = graphsData[0] && Object.values(graphsData[0])[2]
     const temperatura_ar = graphsData[0] && Object.values(graphsData[0])[0]
     const temperatura_solo = graphsData[0] && Object.values(graphsData[0])[1]
+    const data_coleta = new Date(graphsData[0] && Object.values(graphsData[0])[4])
+        .toLocaleDateString()
 
     return(
         <div id='graph-box'>
@@ -33,12 +35,18 @@ function GraphBox() {
                     values = {[
                         umidade_solo
                     ]}
+                    x_values = {[
+                        data_coleta
+                    ]}
                 />
                 <SingleGraphBox 
                     headerText='Umidade do ar (%)'
                     label = 'Umidade'
                     values = {[
                         umidade_ar
+                    ]}
+                    x_values = {[
+                        data_coleta
                     ]}
                 />
                 <SingleGraphBox 
@@ -47,12 +55,18 @@ function GraphBox() {
                     values = {[
                         temperatura_ar
                     ]}
+                    x_values = {[
+                        data_coleta
+                    ]}
                 />
                 <SingleGraphBox 
                     headerText = 'Temperatura do solo (°C)'
                     label = 'Temperatura'
                     values = {[
                         temperatura_solo
+                    ]}
+                    x_values = {[
+                        data_coleta
                     ]}
                 />
             </div>}
