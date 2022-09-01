@@ -1,8 +1,27 @@
 import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompass } from '@fortawesome/free-solid-svg-icons'
+import api from '../../services/api'
 
 function AreaPropertiesForm(props) {
+
+    const setIrrigationStatus = value => {
+        api.post("/commands/irrigate", {
+            "irrigate": value
+        }).then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    }
+
+    const startIrrigation = () => {
+        setIrrigationStatus(true)
+    }
+
+    const stopIrrigation = () => {
+        setIrrigationStatus(false)
+    }
 
     return (
         <div id='area-properties'>
@@ -39,10 +58,10 @@ function AreaPropertiesForm(props) {
                         </button>
                     </div>
                     <div id="start-stop-buttons">
-                        <button id="">
+                        <button onClick={startIrrigation}>
                             Iniciar rota
                         </button>
-                        <button id="stop-route-button">
+                        <button onClick={stopIrrigation}>
                             Parar rota
                         </button>
                     </div>
