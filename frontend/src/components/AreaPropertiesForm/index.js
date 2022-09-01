@@ -31,11 +31,21 @@ function AreaPropertiesForm(props) {
                         <option value="4">4</option>
                     </select>
                 </div>
-                <div id="area-property-button">
-                    <button>
-                        <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
-                        Calcular rota
-                    </button>
+                <div id="area-property-buttons">
+                    <div id="calculate-route-button">
+                        <button>
+                            <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
+                            Calcular rota
+                        </button>
+                    </div>
+                    <div id="start-stop-buttons">
+                        <button id="">
+                            Iniciar rota
+                        </button>
+                        <button id="stop-route-button">
+                            Parar rota
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
