@@ -38,7 +38,7 @@ function SingleGraphBox(props){
         },
     };
 
-    const labels = ['09/07', '10/07', '11/07', '12/07', '13/07']
+    const labels = props.x_values
 
     const data = {
         labels,
