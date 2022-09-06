@@ -12,10 +12,26 @@ function Reports(){
                 <ControlPanelHeader />
                 <div id="reports-info-box">
                     <div id='reports-info-box-graph-items'>
-                        <SingleGraphBox headerText='Chuva + irrigação'/>
-                        <SingleGraphBox headerText='Deficit hídrico'/>
-                        <SingleGraphBox headerText='Reposição'/>
-                        <SingleGraphBox headerText='Retirada'/>
+                        <SingleGraphBox 
+                            headerText = 'Chuva + irrigação'
+                            label = 'Chuva + irrigação'
+                            values = {[80, 82, 90, 85, 86]}
+                        />
+                        <SingleGraphBox 
+                            headerText = 'Deficit hídrico'
+                            label = 'Deficit hídrico'
+                            values = {[80, 82, 90, 85, 86]}
+                        />
+                        <SingleGraphBox 
+                            headerText = 'Reposição'
+                            label = 'Reposição'
+                            values = {[75, 77, 79, 83, 86]}
+                        />
+                        <SingleGraphBox 
+                            headerText = 'Retirada'
+                            label = 'Retirada'
+                            values = {[88, 90, 85, 83, 80]}    
+                        />
                     </div>
                     <SensorStatusBox />
                 </div>
