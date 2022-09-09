@@ -19,6 +19,24 @@ function AreaPropertiesForm(props) {
         })
     }
 
+    const setIrrigationStatus = value => {
+        api.post("/commands/irrigate", {
+            "irrigate": value
+        }).then(response => {
+            console.log(response)
+        }).catch(error => {
+            console.error(error)
+        })
+    }
+
+    const startIrrigation = () => {
+        setIrrigationStatus(true)
+    }
+
+    const stopIrrigation = () => {
+        setIrrigationStatus(false)
+    }
+
     return (
         <div id='area-properties'>
             <div id='area-properties-box'>
@@ -52,11 +70,21 @@ function AreaPropertiesForm(props) {
                         <option value="4">4</option>
                     </select>
                 </div>
-                <div id="area-property-button">
-                    <button onClick={calculateRoute}>
-                        <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
-                        Calcular rota
-                    </button>
+                <div id="area-property-buttons">
+                    <div id="calculate-route-button">
+                        <button>
+                            <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
+                            Calcular rota
+                        </button>
+                    </div>
+                    <div id="start-stop-buttons">
+                        <button onClick={startIrrigation}>
+                            Iniciar rota
+                        </button>
+                        <button onClick={stopIrrigation}>
+                            Parar rota
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
