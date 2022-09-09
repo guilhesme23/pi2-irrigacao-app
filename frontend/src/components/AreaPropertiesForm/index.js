@@ -9,14 +9,21 @@ function AreaPropertiesForm(props) {
     const [fieldLength, setFieldLength] = useState(0)
 
     const calculateRoute = async () => {
-        await api.post("/fields", {
-            "width": fieldWidth,
-            "length": fieldLength
-        }).then(response => {
-            console.log(response);
-        }).catch(err => {
-            console.error(err)
-        })
+        console.log("Creating field!")
+        try {
+            let res = await api.post('/fields', {
+                width: fieldWidth,
+                length: fieldLength
+            })
+
+            console.log(res.data.id)
+            let trajectory = await api.post('/trajectory', {
+                field_id: res.data.id
+            })
+            console.log(trajectory)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const setIrrigationStatus = value => {
@@ -72,7 +79,7 @@ function AreaPropertiesForm(props) {
                 </div>
                 <div id="area-property-buttons">
                     <div id="calculate-route-button">
-                        <button>
+                        <button onClick={calculateRoute}>
                             <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
                             Calcular rota
                         </button>

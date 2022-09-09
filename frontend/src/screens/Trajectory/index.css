@@ -18,3 +18,18 @@
     display: flex;
     width: 78vw;
 }
+
+@media (max-width: 920px) {
+    #area-info-box {
+        flex-direction: column;
+    }
+
+    #area-info-box > div {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    #area-info-box > #area-properties {
+        width: 100%;
+    }
+}
