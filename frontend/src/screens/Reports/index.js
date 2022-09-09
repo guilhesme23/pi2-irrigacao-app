@@ -32,8 +32,6 @@ function Reports(){
         fecthWaterbalanceData()
     }, [])
 
-    console.log(graphDates)
-
     return(
         <div id="reports">
             <Sidebar />
