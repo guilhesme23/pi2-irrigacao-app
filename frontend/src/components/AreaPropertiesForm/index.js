@@ -1,8 +1,23 @@
 import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompass } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
+import api from '../../services/api'
 
 function AreaPropertiesForm(props) {
+    const [fieldWidth, setFieldWidth] = useState(0)
+    const [fieldLength, setFieldLength] = useState(0)
+
+    const calculateRoute = async () => {
+        await api.post("/fields", {
+            "width": fieldWidth,
+            "length": fieldLength
+        }).then(response => {
+            console.log(response);
+        }).catch(err => {
+            console.error(err)
+        })
+    }
 
     return (
         <div id='area-properties'>
@@ -12,11 +27,17 @@ function AreaPropertiesForm(props) {
                 </div>
                 <div id='area-property-box'>
                     <p>Largura (m)</p>
-                    <input id="area-text-box"></input>
+                    <input 
+                        id="area-text-box"
+                        onChange={event => setFieldWidth(event.target.value)}
+                    />
                 </div>
                 <div id='area-property-box'>
                     <p>Comprimento (m)</p>
-                    <input id="area-text-box"></input>
+                    <input 
+                        id="area-text-box" 
+                        onChange={event => setFieldLength(event.target.value)}
+                    />
                 </div>
                 <div id='area-property-box'>
                     <p>Posição da base</p>
@@ -32,7 +53,7 @@ function AreaPropertiesForm(props) {
                     </select>
                 </div>
                 <div id="area-property-button">
-                    <button>
+                    <button onClick={calculateRoute}>
                         <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
                         Calcular rota
                     </button>
