@@ -26,7 +26,19 @@ function SensorStatusBox(){
         }
 
         fetchReportsData()
-    }, [])
+    }, [reportsDates])
+
+    const generateReportString = (status_report) => {
+        if(status_report === 'INIT_CYCLE'){
+            return "O veículo iniciou o ciclo"
+        } else if(status_report === 'END_CYCLE'){
+            return "O veículo finalizou o ciclo"
+        } else if(status_report === 'LOW_BATERY'){
+            return "O veículo está com pouca bateria"
+        } else{
+            return "Status não identificado"
+        }
+    }
 
     return(
         <div id="sensor-status-box">
@@ -36,7 +48,20 @@ function SensorStatusBox(){
                 </div>
                 <div id="column-item">
                     <p id="column-item-text">
-                        {reportsDates[0][0]}, {reportsDates[0][1]}
+                        {
+                            reportsDates[0] === undefined ? 
+                                null : 
+                                `${reportsDates[0][0]}, ${reportsDates[0][1]}`
+                        }
+                    </p>
+                </div>
+                <div id="column-item">
+                    <p id="column-item-text">
+                        {
+                            reportsDates[1] === undefined ? 
+                                null : 
+                                `${reportsDates[1][0]}, ${reportsDates[1][1]}`
+                        }
                     </p>
                 </div>
             </div>
@@ -46,11 +71,12 @@ function SensorStatusBox(){
                 </div>
                 <div id="column-item">
                     <p id="column-item-text">
-                        {
-                            reportsStatus[0] === 'INIT_CYCLE' ? 
-                                "O veículo iniciou o cíclo" : 
-                                "Status não identificado"
-                        }
+                        {generateReportString(reportsStatus[0])}
+                    </p>
+                </div>
+                <div id="column-item">
+                    <p id="column-item-text">
+                        {generateReportString(reportsStatus[1])}
                     </p>
                 </div>
             </div>
