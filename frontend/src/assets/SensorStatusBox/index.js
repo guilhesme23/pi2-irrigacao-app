@@ -29,14 +29,18 @@ function SensorStatusBox(){
     }, [reportsDates])
 
     const generateReportString = (status_report) => {
-        if(status_report === 'INIT_CYCLE'){
-            return "O veículo iniciou o ciclo"
-        } else if(status_report === 'END_CYCLE'){
-            return "O veículo finalizou o ciclo"
-        } else if(status_report === 'LOW_BATERY'){
-            return "O veículo está com pouca bateria"
-        } else{
-            return "Status não identificado"
+        switch (status_report) {
+            case 'INIT_CYCLE':
+                return "O veículo iniciou o ciclo"
+
+            case 'END_CYCLE':
+                return "O veículo finalizou o ciclo"
+
+            case 'LOW_BATERY':
+                return "O veículo está com pouca bateria"
+
+            default:
+                return 'Status não identificado'
         }
     }
 
