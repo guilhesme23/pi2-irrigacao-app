@@ -46,39 +46,33 @@ function SensorStatusBox(){
                 <div id="column-header">
                     <p id="column-header-text">Data/Hora</p>
                 </div>
-                <div id="column-item">
-                    <p id="column-item-text">
-                        {
-                            reportsDates[0] === undefined ? 
-                                null : 
-                                `${reportsDates[0][0]}, ${reportsDates[0][1]}`
-                        }
-                    </p>
-                </div>
-                <div id="column-item">
-                    <p id="column-item-text">
-                        {
-                            reportsDates[1] === undefined ? 
-                                null : 
-                                `${reportsDates[1][0]}, ${reportsDates[1][1]}`
-                        }
-                    </p>
-                </div>
+                {
+                    reportsDates.map(object => (
+                        <div id="column-item">
+                            <p id="column-item-text">
+                                {
+                                    object !== undefined ? 
+                                    `${object[0]}, ${object[1]}` :
+                                    null
+                                }
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
             <div id="sensor-type-column">
                 <div id="column-header">
                     <p id="column-header-text">Atividade</p>
                 </div>
-                <div id="column-item">
-                    <p id="column-item-text">
-                        {generateReportString(reportsStatus[0])}
-                    </p>
-                </div>
-                <div id="column-item">
-                    <p id="column-item-text">
-                        {generateReportString(reportsStatus[1])}
-                    </p>
-                </div>
+                {
+                    reportsStatus.map(object => (
+                        <div id="column-item">
+                            <p id="column-item-text">
+                                {generateReportString(object)}
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
