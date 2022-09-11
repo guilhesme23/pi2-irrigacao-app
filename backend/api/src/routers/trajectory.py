@@ -39,7 +39,7 @@ def post_map_data(data: CreateRoute, db: Session = Depends(get_db)):
 	if not field:
 		raise HTTPException(404, "Field not found")
 
-	grid = gen_grid(field.field_width, field.field_length, [])
+	grid = gen_grid(field.field_width, field.field_length, data.nodes_to_delete)
 	trajectory = christofides_tsp_custom(
 		grid, (data.base_pos_x, data.base_pos_y))
 

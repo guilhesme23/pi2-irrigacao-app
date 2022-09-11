@@ -3,7 +3,7 @@ import networkx.algorithms.approximation as nx_app
 import math
 
 def gen_grid(widht, lenght, nodes_to_remove):
-    square_side_meters = 5
+    square_side_meters = 3
     vetical_nodes = widht/square_side_meters
     horizontal_nodes = lenght/square_side_meters
 
@@ -11,14 +11,14 @@ def gen_grid(widht, lenght, nodes_to_remove):
     H = G.copy()
     H = H.to_undirected()
     for node in nodes_to_remove:
-        if H.has_node(node):
+        if H.has_node(tuple(node)):
             H.remove_node(tuple(node))
         sub_graphs = [H.subgraph(c).copy() for c in nx.connected_components(H)]
         if len(sub_graphs) > 1:
             H = G.copy()
             H = H.to_undirected()
             continue
-        if G.has_node(node):
+        if G.has_node(tuple(node)):
             G.remove_node(tuple(node))
 
     return G
@@ -53,6 +53,7 @@ def irrigation_delimiter(H, cycle):
 
 def flip_to_start_position(cycle, node_to_start):
     check = True
+    node_to_start = tuple(node_to_start)
     for i, node in enumerate(cycle):
         if node == 'S':
             check = not check    
@@ -74,7 +75,7 @@ def christofides_tsp_custom(G, node_to_start):
 
     cycle = irrigation_delimiter(H, cycle) 
     
-    if node_to_start == (0,0):
+    if tuple(node_to_start) == (0,0):
         return cycle
         
     cycle = flip_to_start_position(cycle, node_to_start)

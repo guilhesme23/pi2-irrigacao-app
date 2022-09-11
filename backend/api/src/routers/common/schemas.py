@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from typing import Optional
 
 class FieldPost(BaseModel):
     width: float
@@ -19,6 +19,7 @@ class CreateRoute(BaseModel):
     field_id: int
     base_pos_x: int = 0
     base_pos_y: int = 0
+    nodes_to_delete: Optional[list] = []
 
 
 class RouteResponse(BaseModel):
