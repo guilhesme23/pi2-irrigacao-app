@@ -26,7 +26,23 @@ function SensorStatusBox(){
         }
 
         fetchReportsData()
-    }, [])
+    }, [reportsDates])
+
+    const generateReportString = (status_report) => {
+        switch (status_report) {
+            case 'INIT_CYCLE':
+                return "O veículo iniciou o ciclo"
+
+            case 'END_CYCLE':
+                return "O veículo finalizou o ciclo"
+
+            case 'LOW_BATERY':
+                return "O veículo está com pouca bateria"
+
+            default:
+                return 'Status não identificado'
+        }
+    }
 
     return(
         <div id="sensor-status-box">
@@ -34,25 +50,33 @@ function SensorStatusBox(){
                 <div id="column-header">
                     <p id="column-header-text">Data/Hora</p>
                 </div>
-                <div id="column-item">
-                    <p id="column-item-text">
-                        {reportsDates[0][0]}, {reportsDates[0][1]}
-                    </p>
-                </div>
+                {
+                    reportsDates.map(object => (
+                        <div id="column-item">
+                            <p id="column-item-text">
+                                {
+                                    object !== undefined ? 
+                                    `${object[0]}, ${object[1]}` :
+                                    null
+                                }
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
             <div id="sensor-type-column">
                 <div id="column-header">
                     <p id="column-header-text">Atividade</p>
                 </div>
-                <div id="column-item">
-                    <p id="column-item-text">
-                        {
-                            reportsStatus[0] === 'INIT_CYCLE' ? 
-                                "O veículo iniciou o cíclo" : 
-                                "Status não identificado"
-                        }
-                    </p>
-                </div>
+                {
+                    reportsStatus.map(object => (
+                        <div id="column-item">
+                            <p id="column-item-text">
+                                {generateReportString(object)}
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
