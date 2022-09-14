@@ -1,7 +1,7 @@
 import networkx as nx
 import networkx.algorithms.approximation as nx_app
 
-from src.mapping.core.networkx_grid_route import gen_grid, complete_graph, irrigation_delimiter, flip_to_start_position, christofides_tsp_custom
+from mapping.core.networkx_grid_route import gen_grid, complete_graph, irrigation_delimiter, flip_to_start_position, christofides_tsp_custom
 
 def test_gen_grid():
     G = nx.grid_2d_graph(round(10/3), round(10/3))
