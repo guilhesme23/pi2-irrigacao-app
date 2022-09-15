@@ -130,6 +130,9 @@ def test_trajectory():
     assert response.status_code == 200
     assert response.json()['route']['irrigation_route'] == {'irrigation_route': [list(x) for x in route]}
 
+    response = client.post("/trajectory/", json = {})
+    assert response.status_code == 422
+
 def test_waterbalance():
     response = client.get("/waterbalance")
     assert response.status_code == 200
