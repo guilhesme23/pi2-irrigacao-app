@@ -4,17 +4,17 @@ import math
 
 def gen_grid(widht, lenght, nodes_to_remove):
     square_side_meters = 3
-    vetical_nodes = widht/square_side_meters
+    vertical_nodes = widht/square_side_meters
     horizontal_nodes = lenght/square_side_meters
 
-    G = nx.grid_2d_graph(round(vetical_nodes), round(horizontal_nodes))
+    G = nx.grid_2d_graph(round(vertical_nodes), round(horizontal_nodes))
     H = G.copy()
     H = H.to_undirected()
     for node in nodes_to_remove:
         if H.has_node(tuple(node)):
             H.remove_node(tuple(node))
         sub_graphs = [H.subgraph(c).copy() for c in nx.connected_components(H)]
-        if len(sub_graphs) > 1:
+        if len(sub_graphs) > 1 or len(H.nodes) < 1:
             H = G.copy()
             H = H.to_undirected()
             continue
