@@ -14,6 +14,19 @@ services:
        - postgres_app:/data/postgres
     # volumes:
     #   - ./pi2pgdata:/docker-entrypoint-initdb.d
+  dbtest:
+    image: postgres:13.2-alpine
+    ports:
+      - 5442:5442
+    environment:
+      POSTGRES_USER: pi2usertest
+      POSTGRES_PASSWORD: pi2passtest
+      POSTGRES_DB: irrigation_app_test
+      TZ: 'America/Sao_Paulo'
+      PGDATA: /data/postgres_test
+    volumes:
+       - postgres_app_test:/data/postgres_test
+    command: -p 5442
 
   frontend:
     build:
@@ -32,6 +45,7 @@ services:
     volumes:
       - ./backend/api:/backend/src/api
       - ./backend/mapping:/backend/src/mapping
+      - ./backend/tests:/backend/src/tests
     ports:
       - 5000:5000
     depends_on:
@@ -39,3 +53,4 @@ services:
 
 volumes:
   postgres_app:
+  postgres_app_test:
