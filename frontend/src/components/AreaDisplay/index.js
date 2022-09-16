@@ -132,7 +132,7 @@ function AreaDisplay(props) {
                 </div>
             </div>
             <p id="sprinkler-range-text">
-                Área de alcance do aspersor = 1m
+                Área de alcance do aspersor = 3m
             </p>
         </div>
     )

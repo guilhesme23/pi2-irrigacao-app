@@ -4,6 +4,8 @@ from sqlalchemy.orm import Session
 from api.src.database import get_db
 from api.src.repositories import RepoFields
 from api.src.routers.common.schemas import FieldPost, FieldResponse
+from mapping.core.networkx_grid_route import gen_grid
+import networkx as nx
 
 router = APIRouter()
 
@@ -27,6 +29,14 @@ def get_field(field_id, db: Session = Depends(get_db)):
     repo = RepoFields(db)
     field = repo.get_field_by_id(field_id)
     if field:
-        return field
+        grid = gen_grid(field.field_width, field.field_length, [])
+        grid = nx.to_dict_of_lists(grid)
+        return {
+            'id': field.id,
+            'field_width': field.field_width,
+            'field_length': field.field_length,
+            'grid': list(grid.keys()),
+            'radius': 3
+        }
     else:
         raise HTTPException(404, "Field not found")

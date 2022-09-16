@@ -10,6 +10,8 @@ class FieldResponse(BaseModel):
     id: int
     field_width: float
     field_length: float
+    grid: list | dict | None = None
+    radius: int | None = None
 
     class Config:
         orm_mode = True

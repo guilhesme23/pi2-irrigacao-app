@@ -7,16 +7,31 @@ import api from '../../services/api'
 function AreaPropertiesForm(props) {
     const [fieldWidth, setFieldWidth] = useState(0)
     const [fieldLength, setFieldLength] = useState(0)
+    const [basePosX, setBasePosX] = useState(0)
+    const [basePosY, setBasePosY] = useState(0)
 
     const calculateRoute = async () => {
-        await api.post("/fields", {
-            "width": fieldWidth,
-            "length": fieldLength
-        }).then(response => {
-            console.log(response);
-        }).catch(err => {
-            console.error(err)
-        })
+        console.log("Creating field!")
+        try {
+            let res = await api.post('/fields', {
+                width: fieldWidth,
+                length: fieldLength
+            }, {
+                headers: {"Access-Control-Allow-Origin": "*"}
+            })
+
+            console.log(res.data.id)
+            let trajectory = await api.post('/trajectory', {
+                field_id: res.data.id,
+                base_pos_x: basePosX,
+                base_pos_y: basePosY
+            }, {
+                headers: {"Access-Control-Allow-Origin": "*"}
+            })
+            console.log(trajectory)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const setIrrigationStatus = value => {
@@ -36,6 +51,34 @@ function AreaPropertiesForm(props) {
     const stopIrrigation = () => {
         setIrrigationStatus(false)
     }
+
+    const generateBasePosCoordinates = (value) => {
+        switch (value) {
+            case '1':
+                setBasePosX(0)
+                setBasePosY(0)
+                break;
+
+            case '2':
+                setBasePosX(1)
+                setBasePosY(0)
+                break;
+        
+            case '3':
+                setBasePosX(1)
+                setBasePosY(1)
+                break;
+
+            case '4':
+                setBasePosX(0)
+                setBasePosY(1)
+                break;
+
+            default:
+                break;
+        }
+    }
+    
 
     return (
         <div id='area-properties'>
@@ -63,6 +106,7 @@ function AreaPropertiesForm(props) {
                         onChange={(event) => {
                             props.setBasePosition(event.target.value)
                             props.setUpdateBasePosition(true)
+                            generateBasePosCoordinates(event.target.value)
                     }}>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -72,7 +116,7 @@ function AreaPropertiesForm(props) {
                 </div>
                 <div id="area-property-buttons">
                     <div id="calculate-route-button">
-                        <button>
+                        <button onClick={calculateRoute}>
                             <FontAwesomeIcon id='fa-icon-compass' icon={faCompass}/>
                             Calcular rota
                         </button>
