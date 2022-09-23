@@ -48,16 +48,21 @@ def test_bot():
 
 def test_fields():
     response = client.post("/fields", json = {"width": 30, "length": 30})
-    assert response.status_code == 200
-    assert response.json() == {"id": 3, "field_width": 30, "field_length": 30}
+    assert response.json()['id'] == 3
+    assert response.json()['field_width'] == 30
+    assert response.json()['field_length'] == 30
 
     response = client.get("/fields")
     assert response.status_code == 200
-    assert response.json()[0] == {"id": 3, "field_width": 30, "field_length": 30}
+    assert response.json()[0]['id'] == 3
+    assert response.json()[0]['field_width'] == 30
+    assert response.json()[0]['field_length'] == 30
 
     response = client.get("/fields/3")
     assert response.status_code == 200
-    assert response.json() == {"id": 3, "field_width": 30, "field_length": 30}
+    assert response.json()['id'] == 3
+    assert response.json()['field_width'] == 30
+    assert response.json()['field_length'] == 30
 
     response = client.post("/fields", json = {})
     assert response.status_code == 422
