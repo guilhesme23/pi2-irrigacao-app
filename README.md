@@ -28,15 +28,15 @@
 
 [Models do Banco de dados](/backend/api/src/models.py)
 
-[Manipulação do banco de dados, Registrar/Ler campo](/backend/api/src/repositories/fields.py)
+[Manipulação do banco de dados (Registrar/Ler campo)](/backend/api/src/repositories/fields.py)
 
-[Manipulação do banco de dados, Registrar/Ler Start/Stop](/backend/api/src/repositories/irrigation.py)
+[Manipulação do banco de dados (Registrar/Ler Start/Stop)](/backend/api/src/repositories/irrigation.py)
 
-[Manipulação do banco de dados, Registrar/Ler status](/backend/api/src/repositories/reports.py)
+[Manipulação do banco de dados (Registrar/Ler status)](/backend/api/src/repositories/reports.py)
 
-[Manipulação do banco de dados, Registrar/Ler dados dos sensores](/backend/api/src/repositories/sensors.py)
+[Manipulação do banco de dados (Registrar/Ler dados dos sensores)](/backend/api/src/repositories/sensors.py)
 
-[Manipulação do banco de dados, Registrar/Ler rota](/backend/api/src/repositories/trajectory.py)
+[Manipulação do banco de dados (Registrar/Ler rota)](/backend/api/src/repositories/trajectory.py)
 
 [Testes do sofware de mapeamento](/backend/tests/mapping_test.py)
 
