@@ -1,10 +1,50 @@
 # Grupo - Veículo autônomo de irrigação - PI2 - 2022/1
 
-## Index
+# Index
 
 # Software
 
-# Embarcados (eletroeletrônica)
+## App
+
+### Backend
+
+[Mapeamento](/backend/mapping/core/networkx_grid_route.py)
+
+[Rota bot (Registrar/Ler Start/Stop)](/backend/api/src/routers/bot.py)
+
+[Rota fields (Registrar/Ler campo)](/backend/api/src/routers/fields.py)
+
+[Rota reports (Registrar/Ler status)](/backend/api/src/routers/reports.py)
+
+[Rota sensors (Registrar/Ler dados dos sensores)](/backend/api/src/routers/sensors.py)
+
+[Rota trajectory (Gerar/Ler rota com base no campo registrado)](/backend/api/src/routers/trajectory.py)
+
+[Rota waterbalance (Ler Balanço hidrico)](/backend/api/src/routers/waterbalance.py)
+
+[Banco de dados](/backend/api/src/database.py)
+
+[Banco de dados de teste](/backend/tests/test_database.py)
+
+[Models do Banco de dados](/backend/api/src/models.py)
+
+[Manipulação do banco de dados, Registrar/Ler campo](/backend/api/src/repositories/fields.py)
+
+[Manipulação do banco de dados, Registrar/Ler Start/Stop](/backend/api/src/repositories/irrigation.py)
+
+[Manipulação do banco de dados, Registrar/Ler status](/backend/api/src/repositories/reports.py)
+
+[Manipulação do banco de dados, Registrar/Ler dados dos sensores](/backend/api/src/repositories/sensors.py)
+
+[Manipulação do banco de dados, Registrar/Ler rota](/backend/api/src/repositories/trajectory.py)
+
+[Testes do sofware de mapeamento](/backend/tests/mapping_test.py)
+
+[Testes das rotas](/backend/tests/routes_test.py)
+
+[Testes da manipulação do banco de dados](/backend/tests/repositories_test.py)
+
+## Embarcados (eletroeletrônica)
 
 [Rotina completa em Arduino](/embarcado/inttochar/inttochar.ino)
 
