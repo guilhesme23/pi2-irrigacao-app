@@ -44,6 +44,34 @@
 
 [Testes da manipulação do banco de dados](/backend/tests/repositories_test.py)
 
+## Front-end
+
+### Telas
+
+[Tela de trajetória](/frontend/src/screens/Trajectory/index.js)
+
+[Tela de Data](/frontend/src/screens/Data/index.js)
+
+[Tela de Relatório](/frontend/src/screens/Reports/index.js)
+
+### Componentes de tela
+
+[Quadro de sensores](/frontend/src/assets/SensorStatusBox/index.js)
+
+[Quadro de Grafíco](/frontend/src/assets/SingleGraphBox/index.js)
+
+[Display de área irrigada](/frontend/src/assets/components/AreaDisplay/index.js)
+
+[Formulário de configuração para irrigação](/frontend/src/assets/components/AreaPropertiesForm/index.js)
+
+[Painel de controle](/frontend/src/assets/components/ControlPanelHeader/index.js)
+
+[Painel de Dados](/frontend/src/assets/components/DataBox/index.js)
+
+[Painel de Gráficos](/frontend/src/assets/components/GraphBox/index.js)
+
+[Sidebar](/frontend/src/assets/components/Sidebar/index.js)
+
 ## Embarcados (eletroeletrônica)
 
 [Rotina completa em Arduino](/embarcado/inttochar/inttochar.ino)
