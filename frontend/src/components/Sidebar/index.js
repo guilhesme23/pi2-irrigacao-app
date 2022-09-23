@@ -9,7 +9,7 @@ function Sidebar() {
         <div id="sidebar">
             <div id="logo-box">
                 <img id="logo-image" src={Logo} alt="logo_image" />
-                <p id="logo-text">Texto</p>
+                <p id="logo-text">PI2 Irrigação</p>
             </div>
             <div id="buttons-box">
                 <Link id="sidebar-button" to='/'>
