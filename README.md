@@ -1,2 +1,7 @@
-# pi2-irrigacao-app
-Repositório dedicado ao código do projeto da matéria PI2
+# Grupo - Veículo autônomo de irrigação - PI2 - 2022/1
+
+## Index
+- Software
+
+- Embarcados (eletroeletrônica)
+
