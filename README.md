@@ -1,6 +1,7 @@
 # Grupo - Veículo autônomo de irrigação - PI2 - 2022/1
 
 [Vídeo Promocional](https://youtu.be/PDZmWghjFh0)
+[Vídeo Testes Hardware](https://drive.google.com/drive/folders/1wtENWrextjTOzpvzGQ7yY3OsYy_vhjgd?usp=sharing)
 
 # Software
 
