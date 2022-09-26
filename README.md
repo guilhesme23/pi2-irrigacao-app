@@ -91,3 +91,7 @@
 [Testes do IMU](/embarcado/mpu6050_filter.py)
 
 [Teste do sonar como medição de distância](/embarcado/sensor_distancia.py)
+
+[Schema Arduino](/embarcado/Arduino_Sensores.pdsprj)
+
+[Schema Raspberry](/embarcado/Raspberry_Controle.pdsprj)
